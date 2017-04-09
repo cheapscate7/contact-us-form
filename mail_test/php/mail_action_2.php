@@ -4,13 +4,13 @@
 	use Mailgun\Mailgun;
 
 	# Instantiate the client.
-	$mgClient = new Mailgun('key-3e69efbdcffb1fac4d61cedf8d47d9d4');
-	$domain = "sandboxa72b1fdb29a8459eb86d5526d3efedd2.mailgun.org";
+	$mgClient = new Mailgun('<secret key>');
+	$domain = "<domain>.mailgun.org";
 
 	# Make the call to the client.
 	$result = $mgClient->sendMessage($domain, array(
 	    'from'    => sanitiseEmail($_POST['email']),
-	    'to'      => 'matthewlisterb@gmail.com',
+	    'to'      => '<your@email.address>',
 	    'subject' => ' New Message from: '.sanitiseSubject($_POST['name']),
 	    'text'    => $_POST['content']
 		
